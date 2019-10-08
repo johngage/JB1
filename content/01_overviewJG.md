@@ -37,7 +37,7 @@ Last, to publish your book to the web, you will use a package named `ghp-import`
 
 ```
 
-Your workflow, from this point on, will consist of changing the content in the /content directory in your editor, saving it, rebuilding the book with `jupyter-book build .`, looking at it in the browser aimed at your local machine server,  exporting it using `ghp-import` to GitHub, and looking at it in a browser window aimed at your web GitHub account.
+Your workflow, from this point on, will consist of changing the content in the /content directory in your editor, saving it, rebuilding the book with `jupyter-book build .`, looking at it in the browser aimed at your local machine server,  exporting it using `ghp-import` to GitHub, and looking at it in a second browser window aimed at your web GitHub account.
 
 
 ## Installing _jupyter-book_
