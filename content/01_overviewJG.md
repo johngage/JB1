@@ -32,7 +32,7 @@ Last, to publish your book to the web, you will use a package named `ghp-import`
 
 `$ghp-import -n -p -f _site`
 
-Your workflow, from this point on, will consist of changing the content in the /content directory in your editor, saving it, rebuilding the book with `jupyter-book build .`, and exporting it using `ghp-import`.
+Your workflow, from this point on, will consist of changing the content in the /content directory in your editor, saving it, rebuilding the book with `jupyter-book build .`, looking at it in the browser aimed at your local machine server,  exporting it using `ghp-import` to GitHub, and looking at it in a browser window aimed at your web GitHub account.
 ## Installing _jupyter-book_
 
 You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.
