@@ -24,9 +24,9 @@ Jupyter Notebook format to HTML, and then further modifies that HTML (using Jeky
 
 Using additional packages, your book becomes interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
 
-_**jupyter-book**_ is a python package that generates book pages in HTML with the `build` argument, and then combines the HTML pages into a book with the `serve` argument. This second step uses another package, `jekyll`, to build a table of contents column and a page link column for your book.
+_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines the HTML pages into a book with the `jupyter-book serve` argument. This second step uses another package, `jekyll`, to build a table of contents column and a page link column for your book, and then starts a local server on your machine to show you your book.
 
-Next, using the local address provided by the `serve` argument in your web browser, you will see your book, served from your local machine.
+By pointing your browser to the local address provided by the `jupyter-book serve` argument, you will see your book, served from your local machine.
 
 Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window.  This will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
 
