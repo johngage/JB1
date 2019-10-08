@@ -28,11 +28,17 @@ _jupyter-book_ is a python package that generates book pages in HTML with the `b
 
 Next, using the local address provided by the `serve` argument in your web browser, you will see your book, served from your local machine.
 
-Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal w.  This will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
+Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window.  This will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
 
-`$ghp-import -n -p -f _site`
+```
+$ pip install ghp-import
+$ ghp-import -n -p -f _site
+
+```
 
 Your workflow, from this point on, will consist of changing the content in the /content directory in your editor, saving it, rebuilding the book with `jupyter-book build .`, looking at it in the browser aimed at your local machine server,  exporting it using `ghp-import` to GitHub, and looking at it in a browser window aimed at your web GitHub account.
+
+
 ## Installing _jupyter-book_
 
 You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.
