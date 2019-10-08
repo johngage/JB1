@@ -19,12 +19,12 @@ function toggleDiv(divId) {
 # The Jupyter Book Guide: JG
 
 This is a guide for creating your own book using
-Jupyter Notebooks and markdown. `jupyter-book` converts book content written in markdown and
-Jupyter Notebook format to HTML, and then further modifies that HTMl (using Jekyll) into a book fit for hosting on the web.
+Jupyter Notebooks and markdown. _**jupyter-book**_ converts book content written in markdown and
+Jupyter Notebook format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.
 
-Using additional packages, your book becomes interactive, running the Jupyter Notebook content either locally or across the web.
+Using additional packages, your book becomes interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
 
-_jupyter-book_ is a python package that generates book pages in HTML with the `build` argument, and then combines the HTML pages into a book with the `serve` argument. This second step uses another package, `jekyll`, to build a table of contents column and a page link column for your book.
+_**jupyter-book**_ is a python package that generates book pages in HTML with the `build` argument, and then combines the HTML pages into a book with the `serve` argument. This second step uses another package, `jekyll`, to build a table of contents column and a page link column for your book.
 
 Next, using the local address provided by the `serve` argument in your web browser, you will see your book, served from your local machine.
 
