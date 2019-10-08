@@ -32,8 +32,8 @@ Last, to publish your book to the web, you will use a package named `ghp-import`
 
 ```
 
-$ pip install ghp-import
-$ ghp-import -n -p -f _site
+ $ pip install ghp-import
+ $ ghp-import -n -p -f _site
 
 ```
 
