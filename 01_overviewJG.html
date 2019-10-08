@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Create</title>
+  <title>Overview</title>
   <meta name="description" content="The Jupyter Book Guide: JG This is a guide for creating your own book usingJupyter Notebooks and markdown. jupyter-book converts book content written in mark...">
 
   <link rel="canonical" href="/JB1/johngage.github.io/JB1/01_overviewJG.html">
@@ -13,7 +13,7 @@
 
   <meta property="og:url"         content="/JB1/johngage.github.io/JB1/01_overviewJG.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Create" />
+<meta property="og:title"       content="Overview" />
 <meta property="og:description" content="The Jupyter Book Guide: JG This is a guide for creating your own book usingJupyter Notebooks and markdown. jupyter-book converts book content written in mark..." />
 <meta property="og:image"       content="johngage.github.io/JB1/images/logo/logo.png" />
 
@@ -25,9 +25,9 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage": "johngage.github.io/JB1/01_overviewJG.html",
-  "headline": "Create",
-  "datePublished": "2019-10-08T15:54:19-07:00",
-  "dateModified": "2019-10-08T15:54:19-07:00",
+  "headline": "Overview",
+  "datePublished": "2019-10-08T16:16:23-07:00",
+  "dateModified": "2019-10-08T16:16:23-07:00",
   "description": "The Jupyter Book Guide: JG This is a guide for creating your own book usingJupyter Notebooks and markdown. jupyter-book converts book content written in mark...",
   "author": {
     "@type": "Person",
@@ -436,6 +436,27 @@ initFunction(initPrint)
           href="/JB1/01_overviewJG.html"
         >
           
+          Overview
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/JB1/02_createJG.html"
+        >
+          
           Create
         </a>
 
@@ -453,8 +474,8 @@ initFunction(initPrint)
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
-          href="/JB1/01_overviewJG.html"
+        <a class="c-sidebar__entry "
+          href="/JB1/03_buildJG.html"
         >
           
           Build
@@ -474,11 +495,11 @@ initFunction(initPrint)
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
-          href="/JB1/01_overviewJG.html"
+        <a class="c-sidebar__entry "
+          href="/JB1/04_publishJG.html"
         >
           
-          Serve
+          Publish
         </a>
 
         
@@ -672,6 +693,10 @@ Jupyter Notebooks and markdown. <code>jupyter-book</code> converts book content 
 Jupyter Notebook format to HTML, and then further modifies that HTMl (using Jekyll) into a book fit for hosting on the web.</p>
 <p>Using additional packages, your book becomes interactive, running the Jupyter Notebook content either locally or across the web.</p>
 <p><em>jupyter-book</em> is a python package that generates book pages in HTML with the <code>build</code> argument, and then combines the HTML pages into a book with the <code>serve</code> argument. This second step uses another package, <code>jekyll</code>, to build a table of contents column and a page link column for your book.</p>
+<p>Next, using the local address provided by the <code>serve</code> argument in your web browser, you will see your book, served from your local machine.</p>
+<p>Last, to publish your book to the web, you will use a package named <code>ghp-import</code>, which you will run in a separate terminal w.  This will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.</p>
+<p><code>$ghp-import -n -p -f _site</code></p>
+<p>Your workflow, from this point on, will consist of changing the content in the /content directory in your editor, saving it, rebuilding the book with <code>jupyter-book build .</code>, and exporting it using <code>ghp-import</code>.</p>
 <h2 id="Installing-jupyter-book">Installing <em>jupyter-book</em><a class="anchor-link" href="#Installing-jupyter-book"> </a></h2><p>You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.</p>
 <p>The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your
 Jupyter Book. You can install it via pip with the following command that you can execute anywhere:</p>
@@ -828,8 +853,8 @@ to learn how to create your own!</p>
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/JB1/01_overviewJG.html">
-      Build <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/JB1/02_createJG.html">
+      Create <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

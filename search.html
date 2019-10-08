@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "johngage.github.io/JB1/search",
   "headline": "Search the site",
-  "datePublished": "2019-10-08T15:54:19-07:00",
-  "dateModified": "2019-10-08T15:54:19-07:00",
+  "datePublished": "2019-10-08T16:16:23-07:00",
+  "dateModified": "2019-10-08T16:16:23-07:00",
   "description": "        ",
   "author": {
     "@type": "Person",
@@ -436,6 +436,27 @@ initFunction(initPrint)
           href="/JB1/01_overviewJG.html"
         >
           
+          Overview
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/JB1/02_createJG.html"
+        >
+          
           Create
         </a>
 
@@ -454,7 +475,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/JB1/01_overviewJG.html"
+          href="/JB1/03_buildJG.html"
         >
           
           Build
@@ -475,10 +496,10 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/JB1/01_overviewJG.html"
+          href="/JB1/04_publishJG.html"
         >
           
-          Serve
+          Publish
         </a>
 
         
@@ -652,13 +673,37 @@ initFunction(initPrint)
 <script>
     // Add the lunr store since we will now search it
     var store = [{
-        "title": "Create",
+        "title": "Overview",
         
         "excerpt":
             "The Jupyter Book Guide: JG This is a guide for creating your own book using Jupyter Notebooks and markdown. jupyter-book converts book content written in markdown and Jupyter Notebook format to HTML, and then further modifies that HTMl (using Jekyll) into a book fit for hosting on the web. Using additional packages, your book becomes interactive, running the Jupyter Notebook content either locally or across the web. jupyter-book is a python package that generates book pages in HTML with the build argument, and then combines the HTML pages into a book with the serve argument. This second step uses another...",
         "categories": [],
         "tags": [],
         "url": "johngage.github.io/JB1/01_overviewJG.html",
+        "teaser":null},{
+        "title": "Build",
+        
+        "excerpt":
+            "Create your Jupyter Book *with some rewordings for clarity* ->> Rewording To create a Jupyter Book, you use the jupyter-book package you installed in the previous step. There are three primary ways to create your Jupyter Book: build a minimal book with a few template pages; modify a Demo book, using a data science textbook; or re-build a pre-existing book already in a JupyterBook directory on your computer. 1. Start with a minimal book Running the following command will create a new Jupyter Book with a few content pages and a Table of Contents to get you started: jupyter-book create...",
+        "categories": [],
+        "tags": [],
+        "url": "johngage.github.io/JB1/02_createJG.html",
+        "teaser":null},{
+        "title": "Serve",
+        
+        "excerpt":
+            "Building and publishing your book Once you've added content and configured your book, it's time to build the HTML for each page of your book. We'll use the jupyter-book build command-line tool for this. In the next step, we'll stitch these HTML pages into a book. Prerequisites In order to build the HTML for each page, you should have followed the steps in creating your Jupyter Book structure. You should have a Jupyter Book structure in a local folder on your computer, a collection of notebook/markdown files in your content/ folder, a _data/toc.yml file that defines the structure of your...",
+        "categories": [],
+        "tags": [],
+        "url": "johngage.github.io/JB1/03_buildJG.html",
+        "teaser":null},{
+        "title": "Publish",
+        
+        "excerpt":
+            "Publishing your book online Now that you've built the HTML for each page, it's time to stitch together these pages into HTML for a book and host it online. This means building the left Table of Contents and stitching each of your pages together. You've got two options to do this. Option 1: GitHub builds and hosts your book with GitHub Pages: When you run jupyter-book create it generates the structure of a Jekyll template. GitHub Pages can automatically build a website from a Jekyll template, and you can use this to automatically generate the HTML for your book. Option...",
+        "categories": [],
+        "tags": [],
+        "url": "johngage.github.io/JB1/04_publishJG.html",
         "teaser":null},{
         "title": "Features and customization",
         

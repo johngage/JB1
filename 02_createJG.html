@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Home</title>
-  <meta name="description" content="Amazing Books with Jupyter and Jekyll Jupyter Books lets you build an online book using a collection of Jupyter Notebooksand Markdown files. Its output is si...">
+  <title>Build</title>
+  <meta name="description" content="Create your Jupyter Book  *with some rewordings for clarity*->> RewordingTo create a Jupyter Book, you use the jupyter-book package you installed in the prev...">
 
-  <link rel="canonical" href="/JB1/johngage.github.io/JB1/intro.html">
+  <link rel="canonical" href="/JB1/johngage.github.io/JB1/02_createJG.html">
   <link rel="alternate" type="application/rss+xml" title="JB1" href="/JB1/johngage.github.io/JB1/feed.xml">
 
-  <meta property="og:url"         content="/JB1/johngage.github.io/JB1/intro.html" />
+  <meta property="og:url"         content="/JB1/johngage.github.io/JB1/02_createJG.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Home" />
-<meta property="og:description" content="Amazing Books with Jupyter and Jekyll Jupyter Books lets you build an online book using a collection of Jupyter Notebooksand Markdown files. Its output is si..." />
+<meta property="og:title"       content="Build" />
+<meta property="og:description" content="Create your Jupyter Book  *with some rewordings for clarity*->> RewordingTo create a Jupyter Book, you use the jupyter-book package you installed in the prev..." />
 <meta property="og:image"       content="johngage.github.io/JB1/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -24,11 +24,11 @@
   {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "johngage.github.io/JB1/intro.html",
-  "headline": "Home",
+  "mainEntityOfPage": "johngage.github.io/JB1/02_createJG.html",
+  "headline": "Build",
   "datePublished": "2019-10-08T16:16:23-07:00",
   "dateModified": "2019-10-08T16:16:23-07:00",
-  "description": "Amazing Books with Jupyter and Jekyll Jupyter Books lets you build an online book using a collection of Jupyter Notebooksand Markdown files. Its output is si...",
+  "description": "Create your Jupyter Book  *with some rewordings for clarity*->> RewordingTo create a Jupyter Book, you use the jupyter-book package you installed in the prev...",
   "author": {
     "@type": "Person",
     "name": "JohnGage"
@@ -453,7 +453,7 @@ initFunction(initPrint)
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry "
+        <a class="c-sidebar__entry c-sidebar__entry--active"
           href="/JB1/02_createJG.html"
         >
           
@@ -646,7 +646,7 @@ initFunction(initPrint)
 <div class="download-buttons-dropdown">
     <button id="dropdown-button-trigger" class="interact-button"><i class="fa fa-download"></i></button>
     <div class="download-buttons">
-        <a href="/JB1/content/intro.md" download>
+        <a href="/JB1/content/02_createJG.md" download>
         <button id="interact-button-download" class="interact-button">ORIG</button>
         </a>
         
@@ -680,46 +680,77 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Amazing-Books-with-Jupyter-and-Jekyll">Amazing Books with Jupyter and Jekyll<a class="anchor-link" href="#Amazing-Books-with-Jupyter-and-Jekyll"> </a></h1><p><img src="https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg" class="left"></p>
-<p>Jupyter Books lets you build an online book using a collection of Jupyter Notebooks
-and Markdown files. Its output is similar to the excellent <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> tool,
-and adds extra functionality for people running a Jupyter stack.</p>
-<p>For an example of a book built with Jupyter Books, see the <a href="https://www.textbook.ds100.org/">textbook for Data 100</a> at UC Berkeley.</p>
-<p>Here are a few features of Jupyter Books</p>
-<ul>
-<li>All course content is written in markdown and Jupyter Notebooks, stored in <code>notebooks/</code></li>
-<li>The Jupyter Book repo comes packaged with helper scripts to convert these into Jekyll pages (in <code>scripts/</code>) that can be hosted for free on GitHub</li>
-<li>Pages can have <a href="https://mybinder.org">Binder</a> or JupyterHub links automatically added for interactivity.</li>
-<li>The website itself is based on Jekyll, and is highly extensible and can be freely-hosted on GitHub.</li>
-<li>There are lots of nifty HTML features under-the-hood, such as Turbolinks fast-navigation and
-click-to-copy in code cells.</li>
-</ul>
-<h2 id="Getting-started">Getting started<a class="anchor-link" href="#Getting-started"> </a></h2><p>To get started, you may be interested in the following links.
-Here are a few links of interest:</p>
-<ul>
-<li><p><strong><a href="features/features">Quickstart</a></strong> is a quick demo and overview of Jupyter Books.</p>
-</li>
-<li><p><strong><a href="guide/01_overview">The Jupyter Book Guide</a></strong>
-will step you through the process of configuring and building your own Jupyter Book.</p>
-</li>
-<li><p><strong><a href="https://github.com/jupyter/jupyter-book">The Jupyter Book template repo</a></strong> is the template
-repository you'll use as a start for your Jupyter Book.</p>
-</li>
-<li><p><strong>A demo of the Jupyter Book</strong> can be browsed via the sidebar to the left.</p>
-</li>
-</ul>
-<h2 id="Installation">Installation<a class="anchor-link" href="#Installation"> </a></h2><p>Here's a brief rundown of how to create your own Jupyter Book using this site. For a more
-complete guide, see <a href="guide/01_overview">the Jupyter Book guide</a>.</p>
-<ul>
-<li>Fork the Jupyter Book template repo</li>
-<li>Replace the demo notebooks in <code>content/</code> with your own notebooks and markdown files.</li>
-<li>Create a Table of Contents yaml file by editing <code>_data/toc.yaml</code>.</li>
-<li>Generate the Jekyll markdown for your notebooks by running <code>scripts/generate_book.py</code></li>
-<li>Push your changes to GitHub (or wherever you host your site)!</li>
-</ul>
-<h2 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements"> </a></h2><p>Jupyter Books was originally created by <a href="http://www.samlau.me/">Sam Lau</a> and <a href="https://predictablynoisy.com">Chris Holdgraf</a>
-with support of the <strong>UC Berkeley Data Science Education Program and the Berkeley
-Institute for Data Science</strong>.</p>
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript">
+function toggleDiv(divId) {
+   $("#"+divId).toggle();
+}
+</script>
+
+</head><h1 id="Create-your-Jupyter-Book">Create your Jupyter Book<a class="anchor-link" href="#Create-your-Jupyter-Book"> </a></h1><p><span style="color:red"> *with some rewordings for clarity*</span></p>
+<p><a href="javascript:toggleDiv('myContent');" style="background-color: #ccc; padding: 5px 10px;">->> Rewording</a></p>
+<div id="myContent" style="background-color: pink; padding: 5px 10px;">
+To create a Jupyter Book, you use the <strong>jupyter-book</strong> package you installed in the previous step.
+
+</div><hr>
+
+
+
+
+
+<p>There are three primary ways to create your Jupyter Book: build a minimal book with a few template pages; modify a Demo book, using a data science textbook; or re-build a pre-existing book already in a JupyterBook directory on your computer.</p>
+<h2 id="1.-Start-with-a-minimal-book">1. Start with a minimal book<a class="anchor-link" href="#1.-Start-with-a-minimal-book"> </a></h2><p>Running the following command will create a new Jupyter Book with a few
+content pages and a Table of Contents to get you started:</p>
+
+<pre><code>jupyter-book create mybookname</code></pre>
+<p>This will create a new book using your content in <code>mybookname/</code>. You'll then need to</p>
+<ol>
+<li>Add your content to <code>mybookname/content/</code></li>
+<li>Modify <code>mybookname/_data/toc.yml</code> to match your content</li>
+<li>Modify <code>mybookname/_config.yml</code> to the configuration you'd like</li>
+</ol>
+<p>Note that if you choose to create the book template and later add content
+to it, you can quickly <strong>generate a basic Table of Contents</strong> by running
+the following command:</p>
+
+<pre><code>jupyter-book toc mybookname/</code></pre>
+<h2 id="2.-Modify-the-Demo-Book">2. Modify the Demo Book<a class="anchor-link" href="#2.-Modify-the-Demo-Book"> </a></h2><p>If you'd like to see a more fully-functioning demo book for inspiration, you can
+create the book that lives at the <a href="https://jupyterbook.org">jupyter-book website</a>
+by adding the <code>--demo</code> flag:</p>
+
+<pre><code>jupyter-book create mybookname --demo</code></pre>
+<p>See the previous section for a description of all of the relevant files you
+should modify for your book.</p>
+<h2 id="3.-Use-a-pre-existing-book-configuration">3. Use a pre-existing book configuration<a class="anchor-link" href="#3.-Use-a-pre-existing-book-configuration"> </a></h2><p>If you've used Jupyter Book before, you can quickly generate a <em>new</em> book using a pre-existing
+set of folders and files. These are all available as arguments in the command line interface.</p>
+<p>For example, if you have your book's content in a folder structure like this:</p>
+
+<pre><code>myoldbook/
+├── content
+│   ├── root_test.md
+│   └── tests
+├── _data
+│   └── toc.yml
+├── images
+│   └── tests
+├── mylicense.md
+├── myextrafolder
+│   └── myextrafile.txt
+└── config.yml</code></pre>
+<p>You can generate a Jupyter Book from it with the following command:</p>
+
+<pre><code>jupyter-book create mybookname --content-folder myoldbook/content \
+                               --toc myoldbook/_data/toc.yml \
+                               --config myoldbook/_config.yml \
+                               --license myoldbook/mylicense.md \
+                               --extra-files myoldbook/myextrafolder</code></pre>
+<p>This will create a new Jupyter Book using these files. In this case, you need to ensure
+that the values in <code>_config.yml</code> are correct, and that the Table of Contents (<code>toc.yml</code>) file
+has the structure that you want.</p>
+<h2 id="Next-step:-convert-your-book-content-into-HTML">Next step: convert your book content into HTML<a class="anchor-link" href="#Next-step:-convert-your-book-content-into-HTML"> </a></h2><p>Now that you've got a Jupyter Book folder structure, we can create
+the HTML for each of your book's pages. That's covered in the next
+section.</p>
 
 </div>
 </div>
@@ -735,15 +766,15 @@ Institute for Data Science</strong>.</p>
             <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="">
-      〈 <span class="u-margin-right-tiny"></span> 
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/JB1/01_overviewJG.html">
+      〈 <span class="u-margin-right-tiny"></span> Create
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/JB1/features/features.html">
-      Features and customization <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/JB1/03_buildJG.html">
+      Serve <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>
