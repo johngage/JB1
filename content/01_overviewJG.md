@@ -31,6 +31,7 @@ Next, using the local address provided by the `serve` argument in your web brows
 Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window.  This will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
 
 ```
+
 $ pip install ghp-import
 $ ghp-import -n -p -f _site
 
