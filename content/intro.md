@@ -1,4 +1,4 @@
-# Books with Jupyter and Jekyll
+#  Amazing Books with Jupyter and Jekyll
 
 <img src="https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg" class="left">
 
