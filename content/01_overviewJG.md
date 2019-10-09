@@ -10,12 +10,6 @@ function toggleDiv(divId) {
 
 
 
-
-
-
-
-
-
 # The Jupyter Book Guide: JG
 
 This is a guide to the creation of your own book from content written in
@@ -30,18 +24,18 @@ By pointing your browser to the local address provided by running the `jupyter-b
 
 Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `jupyter-book serve`.
 
-Run ` $ pip install ghp-import` once to install the ghp_import package. Though it says "import", it exports.
+Run ` $ pip install ghp-import` once to install the ghp_import package. Though it says "import", it exports your finished HTML pages to GitHub, so GitHub can serve them as a website to the Internet.
 
 Running `$ ghp-import -n -p -f _site` will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
 
 Your workflow, from this point on, will be:
--  using your editor to change the local content in the /content directory, or saving your Jupyter notebooks into your local /content directory
--  saving your changes
--  building your book's HTML with `$ jupyter-book build .`,  which is executed in your book's directory
--  looking at the result in your local browser, aimed at your local machine server, to see how it looks
+-  use your editor to change the local content in the /content directory, and save your Jupyter notebooks into your local /content directory
+-  save your changes
+-  build your book's HTML with `$ jupyter-book build .`,  which is executed in your book's directory
+-  look at your book in your browser, using the server running on your local machine with a local address.  See how it looks.
 - repeat until satisfied
--  finally, exporting all the HTML files to GitHub, using `ghp-import`
--  then, looking at your book's website in a second browser window, aimed at your web GitHub account, to see what the world will see.
+-  finally, export all the HTML files to GitHub, using `ghp-import`
+-  then, look at your book's website in a second browser window, aimed at your web GitHub account, to see what the world will see.
 
 In practice, it looks like this, using the Atom editor as an example, with your book in the directory `JupyterBooks/JBook1`:
 
@@ -72,7 +66,7 @@ That's it.
 You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.
 
 The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your
-Jupyter Book. You can install it via pip with the following command that you can execute anywhere:
+Jupyter Book. You can install it via `pip` with the following command that you can execute anywhere:
 
 ```
 $ pip install jupyter-book
@@ -83,6 +77,7 @@ Next, create a directory in a convenient place to contain your Jupyter Books. In
 ```
 $ mkdir JupyterBooks
 $ cd JupyterBooks
+
 ```
 
 ## A quick tour of a Jupyter Book
@@ -136,6 +131,8 @@ All of the configuration for your book is in the following file:
 mybookname/
 ├── _config.yml
 ```
+The key fields to define so that the web links are built correctly are `url` and `baseurl`.
+`url` should be the URL for your GitHub account, and look like `url: yourname.github.io`. baseurl is the name of your remote repository, and should look like `/JBook1` .
 
 You can define metadata for your book (such as its title), add
 a book logo, turn on different "interactive" buttons (such as a
