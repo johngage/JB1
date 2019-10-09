@@ -22,7 +22,7 @@ the HTML for each page of your book.
 
 Do so by running the following command in the directory that contains your book's directory:
 
-```
+```bash
 jupyter-book build mybookname/
 
 ```
