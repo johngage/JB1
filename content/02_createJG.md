@@ -14,7 +14,7 @@ function toggleDiv(divId) {
 
 
 
-<a href="javascript:toggleDiv('myContent');" style="background-color: #ccc; padding: 5px 10px;">->> Rewording</a>
+<a href="javascript:toggleDiv('myContent');" style="background-color: #ccc; padding: 5px 10px;">->> More detail</a>
 
 
 <div id="myContent" style="background-color: pink; padding: 5px 10px;">

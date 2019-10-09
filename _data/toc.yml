@@ -22,8 +22,17 @@
 # See the links below for an example.
 
 # Top-level page
-- title: Home
-  url: /intro
+- title: Overview
+  url: /01_overviewJG
+  not_numbered: true
+- title: Create
+  url: /02_createJG
+  not_numbered: true
+- title: Build
+  url: /03_buildJG
+  not_numbered: true
+- title: Publish
+  url: /04_publishJG
   not_numbered: true
 
 # External link

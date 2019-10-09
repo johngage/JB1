@@ -23,7 +23,7 @@ description: >-
    example book built with Jupyter Books.
 
 baseurl: /JB1       # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
-url: johngage.github.io              # the base hostname & protocol for your site, e.g. http://example.com
+url: https://johngage.github.io              # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #######################################################################################

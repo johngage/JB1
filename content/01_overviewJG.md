@@ -10,29 +10,109 @@ function toggleDiv(divId) {
 
 
 
-
-
-
-
-
-
 # The Jupyter Book Guide: JG
 
-This is a guide for creating your own book using
-Jupyter Notebooks and markdown. `jupyter-book` converts book content written in markdown and
-Jupyter Notebook format to HTML, and then further modifies that HTMl (using Jekyll) into a book fit for hosting on the web.
+This is a guide to the creation of your own book from content written in
+Jupyter Notebooks and in markdown.
 
-Using additional packages, your book becomes interactive, running the Jupyter Notebook content either locally or across the web.
+_**jupyter-book**_ converts book content in
+Jupyter Notebook and markdown format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.
 
-_jupyter-book_ is a python package that generates book pages in HTML with the `build` argument, and then combines the HTML pages into a book with the `serve` argument. This second step uses another package, `jekyll`, to build a table of contents column and a page link column for your book.
+Using additional packages, your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
 
+_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `make serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `make serve` command also starts a local server on your machine to show your book in your browser.
+
+By pointing your browser to the local address provided by running the `jupyter-book serve` command, you will see your book, served from your local machine.  That `make serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
+
+Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `make serve`.
+
+Run ` $ pip install ghp-import` once to install the ghp_import package. Though it says "import", it exports your finished HTML pages to GitHub, so GitHub can serve them as a website to the Internet.
+
+Running `$ ghp-import -n -p -f _site` will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
+
+Your workflow, from this point on, will be:
+-  use your editor to change the local content in the /content directory.  Save your Jupyter notebooks into your local /content directory
+-  save your changes
+-  build your book's HTML with `$ jupyter-book build .`,  which is executed in your book's directory
+-  look at your book in your browser, using the server running on your local machine with a local address.  See how it looks.
+- repeat until satisfied
+-  finally, export all the HTML files to GitHub, using `ghp-import`
+-  then, look at your book's website in a second browser window, aimed at your web GitHub account, to see what the world will see.
+
+In practice, it looks like this, using the Atom editor as an example, with your book in the directory `JupyterBooks/JBook1`:
+
+```
+
+$ cd JupyterBooks/JBook1   #move into the home directory for your book
+$ atom .   #invoke the Atom editor on the directory, which will create a "project",\
+ allowing the Atom editor to show all files in the directory
+
+ ```
+
+Edit files in /content
+
+
+Save
+
+
+
+Run `$ jupyter-book build .`
+
+
+
+This converts the .md and .ipynb files in /content
+into HTML files in _build.  \
+These HTML files do not yet have the full page-to-page links needed for a web site.
+To create those links:
+
+Run `$ make serve`
+
+
+This command does a lot.
+It converts the HTML files in _build into complete web HTML files in _site, using Jekyll to generate the links.
+And, it fires up a server that runs until stopped, that displays the newly-built HTML files in _site.
+
+Open a browser window, go to `http://127.0.0.1:4000/JBook1`
+
+See how your book looks.  Check the links.
+
+
+If you make a change to a file in /content, open a new Terminal window in the JBook1 directory.
+
+
+Run `$ jupyter-book build . `
+
+(or `$ make build` , which does the same thing).
+
+Then, just reload the browser to see the result; the server is still running in the other window.
+(On Mac, use `Command-Shift-R`; on PC, `Control-Shift-R`)
+
+Now, to move all the files in _site up to the GitHub server, and make sure GitHub knows where to find them.
+
+Run `$ ghp-import -n -p -f _site`
+
+In another browser window, go to `https://yourname.github.io/JBook1`
+
+See how it looks. Check the links.
+
+That's it.
+
+
+
+```
+And, when you're used to using the CLI, here's what it looks like after you save your edits and the server is running:
+
+$ !j  # Now you can see the updated book locally.
+$ !g  # Now you can see the updated book published on the web.
+
+```
 
 ## Installing _jupyter-book_
 
 You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.
 
 The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your
-Jupyter Book. You can install it via pip with the following command that you can execute anywhere:
+Jupyter Book. You can install it via `pip` with the following command that you can execute anywhere:
 
 ```
 $ pip install jupyter-book
@@ -43,6 +123,7 @@ Next, create a directory in a convenient place to contain your Jupyter Books. In
 ```
 $ mkdir JupyterBooks
 $ cd JupyterBooks
+
 ```
 
 ## A quick tour of a Jupyter Book
@@ -93,9 +174,11 @@ ultimately make up your book.
 All of the configuration for your book is in the following file:
 
 ```
-mybookname/
+JBook1/
 ├── _config.yml
 ```
+The key fields to define so that the web links are built correctly are `url` and `baseurl`.
+`url` should be the URL for your GitHub account, and look like `url: yourname.github.io`. baseurl is the name of your remote repository, and should look like `/JBook1` .
 
 You can define metadata for your book (such as its title), add
 a book logo, turn on different "interactive" buttons (such as a
@@ -121,12 +204,11 @@ You can store these files in whatever collection of folders you'd like, note tha
 the *structure* of your book when it is built will depend solely on the order of
 items in your `_data/toc.yml` file (see below section)
 
-### Table of Contents
+### Table of Contents is defined in `_data/toc.yml`
 
-Jupyter Book uses your Table of Contents to define the structure of your book.
-For example, your chapters, sub-chapters, etc.
+Jupyter Book uses your toc.yml file to define the structure of your book--- for example, your chapters, sub-chapters, pages in chapters, etc.
 
-The Table of Contents lives at this location:
+The Table of Contents definition lives at this location:
 
 ```
 JBook1/
@@ -134,8 +216,9 @@ JBook1/
     └── toc.yml
 ```
 
-This is a YAML file with a collection of pages, each one linking to a
+This is a YAML file listing a collection of pages, each one linking to a
 file in your `content/` folder. Here's an example of a few pages defined in `toc.yml`.
+It's very fussy about indentation.
 
 ```yaml
 - title: Features and customization
@@ -159,10 +242,10 @@ use a few extra YAML values to control the behavior of Jupyter-Book (for example
 `not_numbered: true` will prevent Jupyter Book from numbering the pages in that chapter).
 
 Each item in the YAML file points to a single content file. The links
-should be **relative to the `/content/` folder and with no extension.**
+should be **relative to the `/content/` folder and with no extension, no .md or .ipynb.**
 
 For example, in the example above there is a file in
-`mybookname/content/features/notebooks.ipynb`. The TOC entry that points to
+`JBook1/content/features/notebooks.ipynb`. The TOC entry that points to
 this file is here:
 
 ```yaml
@@ -178,7 +261,7 @@ what rights you retain to the work. This can make your book more sharable and (r
 The license for a Jupyter Book lives in this location:
 
 ```
-mybookname/
+JBook1/
 ├── content
     └── LICENSE.md
 ```
@@ -200,7 +283,7 @@ Notebooks, you should specify the packages needed to run your Jupyter Book.
 In this case, we use a `requirements.txt` file:
 
 ```
-mybookname/
+JBook1/
 └── requirements.txt
 ```
 
@@ -213,7 +296,7 @@ If you'd like to build a bibliography for your book, you can do so by including
 the following file:
 
 ```
-mybookname/
+JBook1/
 ├── _bibliography
     └── references.bib
 ```
