@@ -48,10 +48,27 @@ $ atom .   #invoke the Atom editor on the directory, which will create a "projec
 Edit files in /content
 Save
 
-$ jupyter-book build .
+$ jupyter-book build .   #This converts the .md and .ipynb files in /content \
+into HTML files in _build.  \
+These HTML files do not yet have the full page-to-page links needed for a web site. \
+Those links will be created by running `make serve`.
+
+$ make serve  #This command does a lot. \
+It converts the HTML files in _build into complete web HTML files in _site, using Jekyll to generate the links.  \
+And, it fires up a server that runs until stopped, that displays the HTML files in _site. \
 
 In one browser window, go to `http://127.0.0.1:4000/JBook1`
 See how your book looks.  Check the links.
+
+
+If you make a change to a file in /content, open a new Terminal window in the JBook1 directory, and run `$ jupyter-book build .` \
+(or `$ make build` , which does the same thing)`.\
+
+Then, just reload the browser to see the result; the server is still running in the other window. \
+(On Mac, use `Command-Shift-R`; on PC, `Control-Shift-R`)
+
+Now, move all the files in _site up to the GitHub server, and make sure GitHub knows where to find them.
+
 
 $ ghp-import -n -p -f _site
 
