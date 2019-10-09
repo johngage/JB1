@@ -8,14 +8,14 @@
   <title>Overview</title>
   <meta name="description" content="The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown. jupyter-book converts b...">
 
-  <link rel="canonical" href="/JB1/johngage.github.io/JB1/01_overviewJG.html">
-  <link rel="alternate" type="application/rss+xml" title="JB1" href="/JB1/johngage.github.io/JB1/feed.xml">
+  <link rel="canonical" href="https://johngage.github.io/JB1/01_overviewJG.html">
+  <link rel="alternate" type="application/rss+xml" title="JB1" href="https://johngage.github.io/JB1/feed.xml">
 
-  <meta property="og:url"         content="/JB1/johngage.github.io/JB1/01_overviewJG.html" />
+  <meta property="og:url"         content="https://johngage.github.io/JB1/01_overviewJG.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Overview" />
 <meta property="og:description" content="The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown. jupyter-book converts b..." />
-<meta property="og:image"       content="johngage.github.io/JB1/images/logo/logo.png" />
+<meta property="og:image"       content="https://johngage.github.io/JB1/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
 
@@ -24,10 +24,10 @@
   {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "johngage.github.io/JB1/01_overviewJG.html",
+  "mainEntityOfPage": "https://johngage.github.io/JB1/01_overviewJG.html",
   "headline": "Overview",
-  "datePublished": "2019-10-08T20:53:01-07:00",
-  "dateModified": "2019-10-08T20:53:01-07:00",
+  "datePublished": "2019-10-08T21:19:44-07:00",
+  "dateModified": "2019-10-08T21:19:44-07:00",
   "description": "The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown. jupyter-book converts b...",
   "author": {
     "@type": "Person",
@@ -38,14 +38,14 @@
     "name": "Data 100 at UC Berkeley",
     "logo": {
       "@type": "ImageObject",
-      "url": "johngage.github.io/JB1",
+      "url": "https://johngage.github.io/JB1",
       "width": 60,
       "height": 60
     }
   },
   "image": {
     "@type": "ImageObject",
-    "url": "johngage.github.io/JB1",
+    "url": "https://johngage.github.io/JB1",
     "height": 60,
     "width": 60
   }
@@ -695,22 +695,23 @@ Jupyter Notebook and markdown format to HTML, and then further modifies that HTM
 <p><em><strong>jupyter-book</strong></em> is a python package that generates book pages in HTML with the <code>jupyter-book build</code> command, and then combines those HTML pages into a book with the <code>jupyter-book serve</code> command. This second step uses another package, <code>jekyll</code>, to build a table of contents column for the book, and a page contents column for each page. The <code>serve</code> command also starts a local server on your machine to show your book in your browser.</p>
 <p>By pointing your browser to the local address provided by running the <code>jupyter-book serve</code> command, you will see your book, served from your local machine.  That <code>serve</code> command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.</p>
 <p>Last, to publish your book to the web, you will use a package named <code>ghp-import</code>, which you will run in a separate terminal window because your initial terminal is still running <code>jupyter-book serve</code>.</p>
-<p>Run <code>$ pip install ghp-import</code> once to install the ghp_import package. Though it says "import", it exports.</p>
+<p>Run <code>$ pip install ghp-import</code> once to install the ghp_import package. Though it says "import", it exports your finished HTML pages to GitHub, so GitHub can serve them as a website to the Internet.</p>
 <p>Running <code>$ ghp-import -n -p -f _site</code> will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.</p>
 <p>Your workflow, from this point on, will be:</p>
 <ul>
-<li>using your editor to change the local content in the /content directory, or saving your Jupyter notebooks into your local /content directory</li>
-<li>saving your changes</li>
-<li>building your book's HTML with <code>$ jupyter-book build .</code>,  which is executed in your book's directory</li>
-<li>looking at the result in your local browser, aimed at your local machine server, to see how it looks</li>
+<li>use your editor to change the local content in the /content directory, and save your Jupyter notebooks into your local /content directory</li>
+<li>save your changes</li>
+<li>build your book's HTML with <code>$ jupyter-book build .</code>,  which is executed in your book's directory</li>
+<li>look at your book in your browser, using the server running on your local machine with a local address.  See how it looks.</li>
 <li>repeat until satisfied</li>
-<li>finally, exporting all the HTML files to GitHub, using <code>ghp-import</code></li>
-<li>then, looking at your book's website in a second browser window, aimed at your web GitHub account, to see what the world will see.</li>
+<li>finally, export all the HTML files to GitHub, using <code>ghp-import</code></li>
+<li>then, look at your book's website in a second browser window, aimed at your web GitHub account, to see what the world will see.</li>
 </ul>
 <p>In practice, it looks like this, using the Atom editor as an example, with your book in the directory <code>JupyterBooks/JBook1</code>:</p>
 
-<pre><code>$ cd JupyterBooks/JBook1
-$ atom .
+<pre><code>
+$ cd JupyterBooks/JBook1   #move into the home directory for your book
+$ atom .   #invoke the Atom editor on the directory, which will create a "project", allowing the Atom editor to show all files in the directory
 
 Edit files in /content
 Save
@@ -726,43 +727,35 @@ In another browser window, go to `https://yourname.github.io/JBook1`
 
 See how it looks. Check the links.
 
-That's it.
+That's it.</code></pre>
 
+<pre><code>Oh, and when you're used to using the CLI, here's what it looks like after you save your edits:
 
+$ !j
+$ !g</code></pre>
+<h2 id="Installing-jupyter-book">Installing <em>jupyter-book</em><a class="anchor-link" href="#Installing-jupyter-book"> </a></h2><p>You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.</p>
+<p>The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your
+Jupyter Book. You can install it via <code>pip</code> with the following command that you can execute anywhere:</p>
 
-## Installing _jupyter-book_
+<pre><code>$ pip install jupyter-book</code></pre>
+<p>Next, create a directory in a convenient place to contain your Jupyter Books. Inside that directory, each book will live in its own directory.</p>
 
-You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.
-
-The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your
-Jupyter Book. You can install it via pip with the following command that you can execute anywhere:</code></pre>
-<p>$ pip install jupyter-book</p>
-
-<pre><code>
-Next, create a directory in a convenient place to contain your Jupyter Books. Inside that directory, each book will live in its own directory.</code></pre>
-<p>$ mkdir JupyterBooks
-$ cd JupyterBooks</p>
-
-<pre><code>
-## A quick tour of a Jupyter Book
-
-Jupyter-Book comes with a demo book so that you can see how the content files
+<pre><code>$ mkdir JupyterBooks
+$ cd JupyterBooks</code></pre>
+<h2 id="A-quick-tour-of-a-Jupyter-Book">A quick tour of a Jupyter Book<a class="anchor-link" href="#A-quick-tour-of-a-Jupyter-Book"> </a></h2><p>Jupyter-Book comes with a demo book so that you can see how the content files
 are used in the book. We'll begin with a quick tour of these files, as they are
-the pieces that you'll modify for your own book.   Build a quick book to get the idea, using the commands below, and then build your own book using the example as a template.
+the pieces that you'll modify for your own book.   Build a quick book to get the idea, using the commands below, and then build your own book using the example as a template.</p>
+<p>Create a <strong>demo Jupyter Book</strong>. Run the following command:</p>
 
-Create a **demo Jupyter Book**. Run the following command:</code></pre>
-<p>$ jupyter-book create JBook1 --demo</p>
+<pre><code>$ jupyter-book create JBook1 --demo</code></pre>
+<p>A new directory containing the demo book will be created at the path that you've given (in this case, <code>JupyterBooks/JBook1</code>).  If JBook1 already exists, it won't let you overwrite it; just rename the JBook1 directory to something else, so <code>jupyter-book</code> can create the <code>JBook1</code> directory and fill it with the demo files.</p>
+<p>Let's take a quick look at some important files in the demo book you created:</p>
 
-<pre><code>
-A new directory containing the demo book will be created at the path that you've given (in this case, `JupyterBooks/JBook1`).  If JBook1 already exists, it won't let you overwrite it; just rename the JBook1 directory to something else, so `jupyter-book` can create the `JBook1` directory and fill it with the demo files.
+<pre><code>$ cd JBook1
+$ ls</code></pre>
+<p>Here's what it looks like, showing all the files:</p>
 
-Let's take a quick look at some important files in the demo book you created:</code></pre>
-<p>$ cd JBook1
-$ ls</p>
-
-<pre><code>
-Here's what it looks like, showing all the files:</code></pre>
-<p>JBook1/
+<pre><code>JBook1/
 ├── assets
 │   └── custom
 │       ├── custom.css
@@ -775,67 +768,52 @@ Here's what it looks like, showing all the files:</code></pre>
 │   └── LICENSE.md
 ├── _data
 │   └── toc.yml
-└── requirements.txt</p>
+└── requirements.txt</code></pre>
+<p>Here's a quick rundown of the files you can modify for yourself, and that
+ultimately make up your book.</p>
+<h3 id="Book-configuration">Book configuration<a class="anchor-link" href="#Book-configuration"> </a></h3><p>All of the configuration for your book is in the following file:</p>
 
-<pre><code>
-Here's a quick rundown of the files you can modify for yourself, and that
-ultimately make up your book.
-
-### Book configuration
-
-All of the configuration for your book is in the following file:</code></pre>
-<p>mybookname/
-├── _config.yml</p>
-
-<pre><code>
-You can define metadata for your book (such as its title), add
+<pre><code>mybookname/
+├── _config.yml</code></pre>
+<p>The key fields to define so that the web links are built correctly are <code>url</code> and <code>baseurl</code>.
+<code>url</code> should be the URL for your GitHub account, and look like <code>url: yourname.github.io</code>. baseurl is the name of your remote repository, and should look like <code>/JBook1</code> .</p>
+<p>You can define metadata for your book (such as its title), add
 a book logo, turn on different "interactive" buttons (such as a
-Binder button for pages built from a Jupyter Notebook), and more.
+Binder button for pages built from a Jupyter Notebook), and more.</p>
+<h3 id="Book-content">Book content<a class="anchor-link" href="#Book-content"> </a></h3><p>Your book's content can be found in the <code>content/</code> folder. Some content
+files for the demo book are shown below:</p>
 
-### Book content
-
-Your book's content can be found in the `content/` folder. Some content
-files for the demo book are shown below:</code></pre>
-<p>JBook1/
+<pre><code>JBook1/
 ├── content
     └── features
        ├── features.md
-       └── notebooks.ipynb</p>
+       └── notebooks.ipynb</code></pre>
+<p>Note that the content files are either <strong>Jupyter Notebooks</strong> or <strong>Markdown</strong>
+files. These are the files that define "pages" in your book.</p>
+<p>You can store these files in whatever collection of folders you'd like, note that
+the <em>structure</em> of your book when it is built will depend solely on the order of
+items in your <code>_data/toc.yml</code> file (see below section)</p>
+<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents"> </a></h3><p>Jupyter Book uses your Table of Contents to define the structure of your book.
+For example, your chapters, sub-chapters, etc.</p>
+<p>The Table of Contents lives at this location:</p>
 
-<pre><code>
-Note that the content files are either **Jupyter Notebooks** or **Markdown**
-files. These are the files that define "pages" in your book.
-
-You can store these files in whatever collection of folders you'd like, note that
-the *structure* of your book when it is built will depend solely on the order of
-items in your `_data/toc.yml` file (see below section)
-
-### Table of Contents
-
-Jupyter Book uses your Table of Contents to define the structure of your book.
-For example, your chapters, sub-chapters, etc.
-
-The Table of Contents lives at this location:</code></pre>
-<p>JBook1/
+<pre><code>JBook1/
 ├── _data
-    └── toc.yml</p>
-
-<pre><code>
-This is a YAML file with a collection of pages, each one linking to a
-file in your `content/` folder. Here's an example of a few pages defined in `toc.yml`.
-
-```yaml
-- title: Features and customization
-  url: /features/features
-  not_numbered: true
-  expand_sections: true
-  sections:
-  - title: Markdown files
-    url: /features/markdown
-    not_numbered: true
-  - title: Jupyter notebooks
-    url: /features/notebooks
-    not_numbered: true</code></pre>
+    └── toc.yml</code></pre>
+<p>This is a YAML file with a collection of pages, each one linking to a
+file in your <code>content/</code> folder. Here's an example of a few pages defined in <code>toc.yml</code>.</p>
+<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Features and customization</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/features/features</span>
+  <span class="l l-Scalar l-Scalar-Plain">not_numbered</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="l l-Scalar l-Scalar-Plain">expand_sections</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="l l-Scalar l-Scalar-Plain">sections</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Markdown files</span>
+    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/features/markdown</span>
+    <span class="l l-Scalar l-Scalar-Plain">not_numbered</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Jupyter notebooks</span>
+    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/features/notebooks</span>
+    <span class="l l-Scalar l-Scalar-Plain">not_numbered</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
 <p>The top-most level of your TOC file are <strong>book chapters</strong>. Above, this is the
 "Features and customization" page. Each chapter can have
 several sections (defined in <code>sections:</code>) and each section can have several sub-sections

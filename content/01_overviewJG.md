@@ -40,8 +40,9 @@ Your workflow, from this point on, will be:
 In practice, it looks like this, using the Atom editor as an example, with your book in the directory `JupyterBooks/JBook1`:
 
 ```
-$ cd JupyterBooks/JBook1
-$ atom .
+
+$ cd JupyterBooks/JBook1   #move into the home directory for your book
+$ atom .   #invoke the Atom editor on the directory, which will create a "project", allowing the Atom editor to show all files in the directory
 
 Edit files in /content
 Save
@@ -59,7 +60,15 @@ See how it looks. Check the links.
 
 That's it.
 
+```
 
+```
+Oh, and when you're used to using the CLI, here's what it looks like after you save your edits:
+
+$ !j
+$ !g
+
+```
 
 ## Installing _jupyter-book_
 
