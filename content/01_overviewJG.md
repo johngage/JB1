@@ -24,13 +24,13 @@ Jupyter Notebook and markdown format to HTML, and then further modifies that HTM
 
 Using additional packages, your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
 
-_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `jupyter-book serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `serve` command also starts a local server on your machine to show you your book in your browser.
+_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `jupyter-book serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `serve` command also starts a local server on your machine to show your book in your browser.
 
 By pointing your browser to the local address provided by running the `jupyter-book serve` command, you will see your book, served from your local machine.  That `serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
 
 Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `jupyter-book serve`.
 
-` $ pip install ghp-import` runs once to install the package. Though it says "import", it exports.
+Run ` $ pip install ghp-import` once to install the ghp_import package. Though it says "import", it exports.
 
 Running `$ ghp-import -n -p -f _site` will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
 
