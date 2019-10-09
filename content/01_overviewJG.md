@@ -18,26 +18,53 @@ function toggleDiv(divId) {
 
 # The Jupyter Book Guide: JG
 
-This is a guide for creating your own book using
-Jupyter Notebooks and markdown. _**jupyter-book**_ converts book content written in markdown and
-Jupyter Notebook format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.
+This is a guide to the creation of your own book from content written in
+Jupyter Notebooks and in markdown. _**jupyter-book**_ converts book content in
+Jupyter Notebook and markdown format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.
 
-Using additional packages, your book becomes interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
+Using additional packages, your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
 
-_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines the HTML pages into a book with the `jupyter-book serve` argument. This second step uses another package, `jekyll`, to build a table of contents column and a page link column for your book, and then starts a local server on your machine to show you your book.
+_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `jupyter-book serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `serve` command also starts a local server on your machine to show you your book in your browser.
 
-By pointing your browser to the local address provided by the `jupyter-book serve` argument, you will see your book, served from your local machine.
+By pointing your browser to the local address provided by running the `jupyter-book serve` command, you will see your book, served from your local machine.  That `serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
 
-Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window.  This will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
+Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `jupyter-book serve`.
+
+` $ pip install ghp-import` runs once to install the package. Though it says "import", it exports.
+
+Running `$ ghp-import -n -p -f _site` will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
+
+Your workflow, from this point on, will be:
+-  using your editor to change the local content in the /content directory, or saving your Jupyter notebooks into your local /content directory
+-  saving your changes
+-  building your book's HTML with `$ jupyter-book build .`,  which is executed in your book's directory
+-  looking at the result in your local browser, aimed at your local machine server, to see how it looks
+- repeat until satisfied
+-  finally, exporting all the HTML files to GitHub, using `ghp-import`
+-  then, looking at your book's website in a second browser window, aimed at your web GitHub account, to see what the world will see.
+
+In practice, it looks like this, using the Atom editor as an example, with your book in the directory `JupyterBooks/JBook1`:
 
 ```
+$ cd JupyterBooks/JBook1
+$ atom .
 
- $ pip install ghp-import
- $ ghp-import -n -p -f _site
+Edit files in /content
+Save
 
-```
+$ jupyter-book build .
 
-Your workflow, from this point on, will consist of changing the content in the /content directory in your editor, saving it, rebuilding the book with `jupyter-book build .`, looking at it in the browser aimed at your local machine server,  exporting it using `ghp-import` to GitHub, and looking at it in a second browser window aimed at your web GitHub account.
+In one browser window, go to `http://127.0.0.1:4000/JBook1`
+See how your book looks.  Check the links.
+
+$ ghp-import -n -p -f _site
+
+In another browser window, go to `https://yourname.github.io/JBook1`
+
+See how it looks. Check the links.
+
+That's it.
+
 
 
 ## Installing _jupyter-book_
