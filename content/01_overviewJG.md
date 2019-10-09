@@ -30,7 +30,7 @@ Run ` $ pip install ghp-import` once to install the ghp_import package. Though i
 
 Running `$ ghp-import -n -p -f _site` will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
 
-Your workflow, from this point on, will be:
+Your workflow, from this point on, with the server running, will be:
 -  use your editor to change the local content in the /content directory.  Save your Jupyter notebooks into your local /content directory
 -  save your changes
 -  build your book's HTML with `$ jupyter-book build .`,  which is executed in your book's directory
