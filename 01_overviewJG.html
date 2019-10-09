@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://johngage.github.io/JB1/01_overviewJG.html",
   "headline": "Overview",
-  "datePublished": "2019-10-08T23:01:42-07:00",
-  "dateModified": "2019-10-08T23:01:42-07:00",
+  "datePublished": "2019-10-08T23:17:16-07:00",
+  "dateModified": "2019-10-08T23:17:16-07:00",
   "description": "The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown.jupyter-book converts bo...",
   "author": {
     "@type": "Person",
@@ -782,7 +782,7 @@ $ ls</code></pre>
 ultimately make up your book.</p>
 <h3 id="Book-configuration">Book configuration<a class="anchor-link" href="#Book-configuration"> </a></h3><p>All of the configuration for your book is in the following file:</p>
 
-<pre><code>mybookname/
+<pre><code>JBook1/
 ├── _config.yml</code></pre>
 <p>The key fields to define so that the web links are built correctly are <code>url</code> and <code>baseurl</code>.
 <code>url</code> should be the URL for your GitHub account, and look like <code>url: yourname.github.io</code>. baseurl is the name of your remote repository, and should look like <code>/JBook1</code> .</p>
@@ -802,15 +802,15 @@ files. These are the files that define "pages" in your book.</p>
 <p>You can store these files in whatever collection of folders you'd like, note that
 the <em>structure</em> of your book when it is built will depend solely on the order of
 items in your <code>_data/toc.yml</code> file (see below section)</p>
-<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents"> </a></h3><p>Jupyter Book uses your Table of Contents to define the structure of your book.
-For example, your chapters, sub-chapters, etc.</p>
-<p>The Table of Contents lives at this location:</p>
+<h3 id="Table-of-Contents-is-defined-in-_data/toc.yml">Table of Contents is defined in <code>_data/toc.yml</code><a class="anchor-link" href="#Table-of-Contents-is-defined-in-_data/toc.yml"> </a></h3><p>Jupyter Book uses your toc.yml file to define the structure of your book--- for example, your chapters, sub-chapters, pages in chapters, etc.</p>
+<p>The Table of Contents definition lives at this location:</p>
 
 <pre><code>JBook1/
 ├── _data
     └── toc.yml</code></pre>
-<p>This is a YAML file with a collection of pages, each one linking to a
-file in your <code>content/</code> folder. Here's an example of a few pages defined in <code>toc.yml</code>.</p>
+<p>This is a YAML file listing a collection of pages, each one linking to a
+file in your <code>content/</code> folder. Here's an example of a few pages defined in <code>toc.yml</code>.
+It's very fussy about indentation.</p>
 <div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Features and customization</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/features/features</span>
   <span class="l l-Scalar l-Scalar-Plain">not_numbered</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -830,9 +830,9 @@ several sections (defined in <code>sections:</code>) and each section can have s
 use a few extra YAML values to control the behavior of Jupyter-Book (for example,
 <code>not_numbered: true</code> will prevent Jupyter Book from numbering the pages in that chapter).</p>
 <p>Each item in the YAML file points to a single content file. The links
-should be <strong>relative to the <code>/content/</code> folder and with no extension.</strong></p>
+should be <strong>relative to the <code>/content/</code> folder and with no extension, no .md or .ipynb.</strong></p>
 <p>For example, in the example above there is a file in
-<code>mybookname/content/features/notebooks.ipynb</code>. The TOC entry that points to
+<code>JBook1/content/features/notebooks.ipynb</code>. The TOC entry that points to
 this file is here:</p>
 <div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Jupyter notebooks</span>
         <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/features/notebooks</span>
@@ -841,7 +841,7 @@ this file is here:</p>
 what rights you retain to the work. This can make your book more sharable and (re)usable.</p>
 <p>The license for a Jupyter Book lives in this location:</p>
 
-<pre><code>mybookname/
+<pre><code>JBook1/
 ├── content
     └── LICENSE.md</code></pre>
 <p>When you create a new book, if you don't specify a license, then <code>jupyter-book</code> will by default
@@ -856,14 +856,14 @@ for several options for licenses that may suit your needs.</p>
 Notebooks, you should specify the packages needed to run your Jupyter Book.
 In this case, we use a <code>requirements.txt</code> file:</p>
 
-<pre><code>mybookname/
+<pre><code>JBook1/
 └── requirements.txt</code></pre>
 <p>The demo book uses <code>requirements.txt</code> because it has Python code, but you can
 include any other files that you'd like to.</p>
 <h3 id="Book-bibliography-for-citations">Book bibliography for citations<a class="anchor-link" href="#Book-bibliography-for-citations"> </a></h3><p>If you'd like to build a bibliography for your book, you can do so by including
 the following file:</p>
 
-<pre><code>mybookname/
+<pre><code>JBook1/
 ├── _bibliography
     └── references.bib</code></pre>
 <p>This BiBTex file can be used along with the <code>jekyll-scholar</code> extension. For more information

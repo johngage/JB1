@@ -174,7 +174,7 @@ ultimately make up your book.
 All of the configuration for your book is in the following file:
 
 ```
-mybookname/
+JBook1/
 ├── _config.yml
 ```
 The key fields to define so that the web links are built correctly are `url` and `baseurl`.
@@ -204,12 +204,11 @@ You can store these files in whatever collection of folders you'd like, note tha
 the *structure* of your book when it is built will depend solely on the order of
 items in your `_data/toc.yml` file (see below section)
 
-### Table of Contents
+### Table of Contents is defined in `_data/toc.yml`
 
-Jupyter Book uses your Table of Contents to define the structure of your book.
-For example, your chapters, sub-chapters, etc.
+Jupyter Book uses your toc.yml file to define the structure of your book--- for example, your chapters, sub-chapters, pages in chapters, etc.
 
-The Table of Contents lives at this location:
+The Table of Contents definition lives at this location:
 
 ```
 JBook1/
@@ -217,8 +216,9 @@ JBook1/
     └── toc.yml
 ```
 
-This is a YAML file with a collection of pages, each one linking to a
+This is a YAML file listing a collection of pages, each one linking to a
 file in your `content/` folder. Here's an example of a few pages defined in `toc.yml`.
+It's very fussy about indentation.
 
 ```yaml
 - title: Features and customization
@@ -242,10 +242,10 @@ use a few extra YAML values to control the behavior of Jupyter-Book (for example
 `not_numbered: true` will prevent Jupyter Book from numbering the pages in that chapter).
 
 Each item in the YAML file points to a single content file. The links
-should be **relative to the `/content/` folder and with no extension.**
+should be **relative to the `/content/` folder and with no extension, no .md or .ipynb.**
 
 For example, in the example above there is a file in
-`mybookname/content/features/notebooks.ipynb`. The TOC entry that points to
+`JBook1/content/features/notebooks.ipynb`. The TOC entry that points to
 this file is here:
 
 ```yaml
@@ -261,7 +261,7 @@ what rights you retain to the work. This can make your book more sharable and (r
 The license for a Jupyter Book lives in this location:
 
 ```
-mybookname/
+JBook1/
 ├── content
     └── LICENSE.md
 ```
@@ -283,7 +283,7 @@ Notebooks, you should specify the packages needed to run your Jupyter Book.
 In this case, we use a `requirements.txt` file:
 
 ```
-mybookname/
+JBook1/
 └── requirements.txt
 ```
 
@@ -296,7 +296,7 @@ If you'd like to build a bibliography for your book, you can do so by including
 the following file:
 
 ```
-mybookname/
+JBook1/
 ├── _bibliography
     └── references.bib
 ```
