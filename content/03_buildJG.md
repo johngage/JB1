@@ -26,7 +26,7 @@ Do so by running the following command in the directory that contains your book'
 jupyter-book build mybookname/
 
 ```
-or
+or change directory into your book's directory, and run:
 
 ```
 $ cd mybookname
