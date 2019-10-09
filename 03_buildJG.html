@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://johngage.github.io/JB1/03_buildJG.html",
   "headline": "Build",
-  "datePublished": "2019-10-08T23:35:32-07:00",
-  "dateModified": "2019-10-08T23:35:32-07:00",
+  "datePublished": "2019-10-09T00:02:04-07:00",
+  "dateModified": "2019-10-09T00:02:04-07:00",
   "description": "Building and publishing your book Once you've added content and configured your book, it's time tobuild the HTML for each page of your book. We'll use thejup...",
   "author": {
     "@type": "Person",
@@ -693,9 +693,13 @@ in the <code>config.yml</code> file.</p>
 <h2 id="Build-each-page's-HTML">Build each page's HTML<a class="anchor-link" href="#Build-each-page's-HTML"> </a></h2><p>Now that your book's content is in the <code>content/</code> folder and you've
 defined your book's structure in <code>_data/toc.yml</code>, you can build
 the HTML for each page of your book.</p>
-<p>Do so by running the following command:</p>
+<p>Do so by running the following command in the directory that contains your book's directory:</p>
 
 <pre><code>jupyter-book build mybookname/</code></pre>
+<p>or</p>
+
+<pre><code>$ cd mybookname
+$ jupyter-book build .</code></pre>
 <p>This will:</p>
 <ul>
 <li>Use the links specified in the <code>_data/toc.yml</code> file (pointing to files in <code>/content/</code>) and
@@ -713,12 +717,17 @@ been updated since the last time you built the book. This helps reduce the
 amount of unnecessary time needed to build your book. If you'd like to
 force Jupyter Book to re-build a particular page, you can either edit the
 corresponding file in the <code>content/</code> folder, or delete that page's HTML
-in the <code>_build/</code> folder.</p>
-<h2 id="Create-an-online-repository-for-your-book">Create an <em>online</em> repository for your book<a class="anchor-link" href="#Create-an-online-repository-for-your-book"> </a></h2><p>You've created your book on your own computer, but you haven't yet added it
+in the <code>_build/</code> folder. To rebuild all files, just delete the _build directory. All HTML files will be regenerated.</p>
+<h2 id="Create-an-online-repository-for-your-book-at-GitHub">Create an <em>online</em> repository for your book at GitHub<a class="anchor-link" href="#Create-an-online-repository-for-your-book-at-GitHub"> </a></h2><p>You've created your book on your own computer, but you haven't yet added it
 online. This section covers the steps to create your own GitHub repository,
-and to add your book's content to it. In this case, we'll use GitHub-Pages
-to build the HTML for your book. However, you can also build the book's HTML
-manually. Both will be covered in <a href="04_publish.html">building and publishing your book</a>.</p>
+and how to add your book's content to it.</p>
+<p>The simplest is to use GitHub-Pages
+to build the HTML for your book, and serve it to the web.</p>
+<p>You just make your book's directory a <strong>git</strong> repository, edit all the content, run <code>$ jupyter-book build .</code>
+and use the GitHub Desktop tool to push all your files up to GitHub, using the master branch.  GitHub will generate your web pages using Jekyll and serve them. If this doesn't make any sense, don't worry.</p>
+<p>But if you've got a bibliography, GitHub doesn't know how to use the special Jekyll package for bibliograpic references.  You'll get a mysterious "Liquid tag" error.  Don't panic.  We'll build the HTML locally, using the special package, and then push it to GitHub, bypassing the GitHub machinery to build HTML. That's the <code>ghp-import</code> command described earlier, covered in <a href="04_publish.html">building and publishing your book</a>.</p>
+<h3 id="Set-up-GitHub">Set up GitHub<a class="anchor-link" href="#Set-up-GitHub"> </a></h3><p>Get an account.</p>
+<h3 id="Clean-up-this-page-and-the-next-page--(Tuesday,-8-Oct)">Clean up this page and the next page  (Tuesday, 8 Oct)<a class="anchor-link" href="#Clean-up-this-page-and-the-next-page--(Tuesday,-8-Oct)"> </a></h3><p>Get the application <strong>GitHub Desktop</strong></p>
 <ol>
 <li><p>First, log-in to GitHub, then go to the "create a new repository" page:</p>
 <p><a href="https://github.com/new">https://github.com/new</a></p>

@@ -20,10 +20,18 @@ Now that your book's content is in the `content/` folder and you've
 defined your book's structure in `_data/toc.yml`, you can build
 the HTML for each page of your book.
 
-Do so by running the following command:
+Do so by running the following command in the directory that contains your book's directory:
 
 ```
 jupyter-book build mybookname/
+
+```
+or
+
+```
+$ cd mybookname
+$ jupyter-book build .
+
 ```
 
 This will:
@@ -44,15 +52,31 @@ been updated since the last time you built the book. This helps reduce the
 amount of unnecessary time needed to build your book. If you'd like to
 force Jupyter Book to re-build a particular page, you can either edit the
 corresponding file in the `content/` folder, or delete that page's HTML
-in the `_build/` folder.
+in the `_build/` folder. To rebuild all files, just delete the _build directory. All HTML files will be regenerated.
 
-## Create an *online* repository for your book
+## Create an *online* repository for your book at GitHub
 
 You've created your book on your own computer, but you haven't yet added it
 online. This section covers the steps to create your own GitHub repository,
-and to add your book's content to it. In this case, we'll use GitHub-Pages
-to build the HTML for your book. However, you can also build the book's HTML
-manually. Both will be covered in [building and publishing your book](04_publish.html).
+and how to add your book's content to it.
+
+
+
+The simplest is to use GitHub-Pages
+to build the HTML for your book, and serve it to the web.
+
+You just make your book's directory a **git** repository, edit all the content, run `$ jupyter-book build .`
+and use the GitHub Desktop tool to push all your files up to GitHub, using the master branch.  GitHub will generate your web pages using Jekyll and serve them. If this doesn't make any sense, don't worry.
+
+But if you've got a bibliography, GitHub doesn't know how to use the special Jekyll package for bibliograpic references.  You'll get a mysterious "Liquid tag" error.  Don't panic.  We'll build the HTML locally, using the special package, and then push it to GitHub, bypassing the GitHub machinery to build HTML. That's the `ghp-import` command described earlier, covered in [building and publishing your book](04_publish.html).
+
+### Set up GitHub
+
+Get an account.
+
+### Clean up this page and the next page  (Tuesday, 8 Oct)
+
+Get the application **GitHub Desktop**
 
 1. First, log-in to GitHub, then go to the "create a new repository" page:
 
