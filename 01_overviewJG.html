@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://johngage.github.io/JB1/01_overviewJG.html",
   "headline": "Overview",
-  "datePublished": "2019-10-08T23:17:16-07:00",
-  "dateModified": "2019-10-08T23:17:16-07:00",
+  "datePublished": "2019-10-08T23:22:55-07:00",
+  "dateModified": "2019-10-08T23:22:55-07:00",
   "description": "The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown.jupyter-book converts bo...",
   "author": {
     "@type": "Person",
@@ -694,7 +694,7 @@ Jupyter Notebooks and in markdown.</p>
 Jupyter Notebook and markdown format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.</p>
 <p>Using additional packages, your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....</p>
 <p><em><strong>jupyter-book</strong></em> is a python package that generates book pages in HTML with the <code>jupyter-book build</code> command, and then combines those HTML pages into a book with the <code>make serve</code> command. This second step uses another package, <code>jekyll</code>, to build a table of contents column for the book, and a page contents column for each page. The <code>make serve</code> command also starts a local server on your machine to show your book in your browser.</p>
-<p>By pointing your browser to the local address provided by running the <code>jupyter-book serve</code> command, you will see your book, served from your local machine.  That <code>make serve</code> command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.</p>
+<p>By pointing your browser to the local address provided by running the <code>make serve</code> command, you will see your local book, served from your local machine.  That <code>make serve</code> command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.</p>
 <p>Last, to publish your book to the web, you will use a package named <code>ghp-import</code>, which you will run in a separate terminal window because your initial terminal is still running <code>make serve</code>.</p>
 <p>Run <code>$ pip install ghp-import</code> once to install the ghp_import package. Though it says "import", it exports your finished HTML pages to GitHub, so GitHub can serve them as a website to the Internet.</p>
 <p>Running <code>$ ghp-import -n -p -f _site</code> will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.</p>

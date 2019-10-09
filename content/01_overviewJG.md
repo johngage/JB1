@@ -22,7 +22,7 @@ Using additional packages, your book becomes live and interactive, running the J
 
 _**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `make serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `make serve` command also starts a local server on your machine to show your book in your browser.
 
-By pointing your browser to the local address provided by running the `jupyter-book serve` command, you will see your book, served from your local machine.  That `make serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
+By pointing your browser to the local address provided by running the `make serve` command, you will see your local book, served from your local machine.  That `make serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
 
 Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `make serve`.
 
