@@ -276,7 +276,7 @@ If you'd like to choose a different license, you can add whatever text you like 
 in `/content/LICENSE.md`. We commend checking out the [Creative Commons licenses page](https://creativecommons.org/licenses)
 for several options for licenses that may suit your needs.
 
-### Book code requirements files
+### Jupyter Notebook code requirements files
 
 Since your Jupyter Book likely has computational material specified in Jupyter
 Notebooks, you should specify the packages needed to run your Jupyter Book.
