@@ -100,7 +100,7 @@ That's it.
 
 
 ```
-Oh, when you're used to using the CLI, here's what it looks like after you save your edits and the server is running:
+And, when you're used to using the CLI, here's what it looks like after you save your edits and the server is running:
 
 $ !j  # Now you can see the updated book locally.
 $ !g  # Now you can see the updated book published on the web.
