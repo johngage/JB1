@@ -70,7 +70,7 @@ Run `$ make serve`
 
 This command does a lot.
 It converts the HTML files in _build into complete web HTML files in _site, using Jekyll to generate the links.
-And, it fires up a server that runs until stopped, that displays the HTML files in _site.
+And, it fires up a server that runs until stopped, that displays the newly-built HTML files in _site.
 
 Open a browser window, go to `http://127.0.0.1:4000/JBook1`
 
