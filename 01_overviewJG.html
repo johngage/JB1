@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://johngage.github.io/JB1/01_overviewJG.html",
   "headline": "Overview",
-  "datePublished": "2019-10-08T23:24:55-07:00",
-  "dateModified": "2019-10-08T23:24:55-07:00",
+  "datePublished": "2019-10-08T23:30:58-07:00",
+  "dateModified": "2019-10-08T23:30:58-07:00",
   "description": "The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown.jupyter-book converts bo...",
   "author": {
     "@type": "Person",
@@ -799,9 +799,9 @@ files for the demo book are shown below:</p>
        └── notebooks.ipynb</code></pre>
 <p>Note that the content files are either <strong>Jupyter Notebooks</strong> or <strong>Markdown</strong>
 files. These are the files that define "pages" in your book.</p>
-<p>You can store these files in whatever collection of folders you'd like, note that
+<p>You can store these files in whatever collection of folders you'd like. Just be clear that the "root" directory is /content.  All files are relative to that. Note that
 the <em>structure</em> of your book when it is built will depend solely on the order of
-items in your <code>_data/toc.yml</code> file (see below section)</p>
+items in your <code>_data/toc.yml</code> file, and the URL's are relative to /content. (see below section)</p>
 <h3 id="Table-of-Contents-is-defined-in-_data/toc.yml">Table of Contents is defined in <code>_data/toc.yml</code><a class="anchor-link" href="#Table-of-Contents-is-defined-in-_data/toc.yml"> </a></h3><p>Jupyter Book uses your toc.yml file to define the structure of your book--- for example, your chapters, sub-chapters, pages in chapters, etc.</p>
 <p>The Table of Contents definition lives at this location:</p>
 

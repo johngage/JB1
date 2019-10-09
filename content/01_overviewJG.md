@@ -200,9 +200,9 @@ JBook1/
 Note that the content files are either **Jupyter Notebooks** or **Markdown**
 files. These are the files that define "pages" in your book.
 
-You can store these files in whatever collection of folders you'd like, note that
+You can store these files in whatever collection of folders you'd like. Just be clear that the "root" directory is /content.  All files are relative to that. Note that
 the *structure* of your book when it is built will depend solely on the order of
-items in your `_data/toc.yml` file (see below section)
+items in your `_data/toc.yml` file, and the URL's are relative to /content. (see below section)
 
 ### Table of Contents is defined in `_data/toc.yml`
 
