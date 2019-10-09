@@ -250,7 +250,7 @@ this file is here:
 
 ```yaml
     - title: Jupyter notebooks
-        url: /features/notebooks
+        url: /features/notebooks  #Note that `features` is a subdirectory of /content
 ```
 
 ### A license for your content
