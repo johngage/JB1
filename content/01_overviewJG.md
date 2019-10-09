@@ -42,7 +42,8 @@ In practice, it looks like this, using the Atom editor as an example, with your 
 ```
 
 $ cd JupyterBooks/JBook1   #move into the home directory for your book
-$ atom .   #invoke the Atom editor on the directory, which will create a "project", allowing the Atom editor to show all files in the directory
+$ atom .   #invoke the Atom editor on the directory, which will create a "project",\
+ allowing the Atom editor to show all files in the directory
 
 Edit files in /content
 Save
