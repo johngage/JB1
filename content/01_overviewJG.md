@@ -13,23 +13,25 @@ function toggleDiv(divId) {
 # The Jupyter Book Guide: JG
 
 This is a guide to the creation of your own book from content written in
-Jupyter Notebooks and in markdown. _**jupyter-book**_ converts book content in
+Jupyter Notebooks and in markdown.
+
+_**jupyter-book**_ converts book content in
 Jupyter Notebook and markdown format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.
 
 Using additional packages, your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
 
-_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `jupyter-book serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `serve` command also starts a local server on your machine to show your book in your browser.
+_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `make serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `make serve` command also starts a local server on your machine to show your book in your browser.
 
-By pointing your browser to the local address provided by running the `jupyter-book serve` command, you will see your book, served from your local machine.  That `serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
+By pointing your browser to the local address provided by running the `jupyter-book serve` command, you will see your book, served from your local machine.  That `make serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
 
-Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `jupyter-book serve`.
+Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `make serve`.
 
 Run ` $ pip install ghp-import` once to install the ghp_import package. Though it says "import", it exports your finished HTML pages to GitHub, so GitHub can serve them as a website to the Internet.
 
 Running `$ ghp-import -n -p -f _site` will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.
 
 Your workflow, from this point on, will be:
--  use your editor to change the local content in the /content directory, and save your Jupyter notebooks into your local /content directory
+-  use your editor to change the local content in the /content directory.  Save your Jupyter notebooks into your local /content directory
 -  save your changes
 -  build your book's HTML with `$ jupyter-book build .`,  which is executed in your book's directory
 -  look at your book in your browser, using the server running on your local machine with a local address.  See how it looks.
@@ -45,32 +47,49 @@ $ cd JupyterBooks/JBook1   #move into the home directory for your book
 $ atom .   #invoke the Atom editor on the directory, which will create a "project",\
  allowing the Atom editor to show all files in the directory
 
+ ```
+
 Edit files in /content
+
+
 Save
 
-$ jupyter-book build .   #This converts the .md and .ipynb files in /content \
+
+
+Run `$ jupyter-book build .`
+
+
+
+This converts the .md and .ipynb files in /content
 into HTML files in _build.  \
-These HTML files do not yet have the full page-to-page links needed for a web site. \
-Those links will be created by running `make serve`.
+These HTML files do not yet have the full page-to-page links needed for a web site.
+To create those links:
 
-$ make serve  #This command does a lot. \
-It converts the HTML files in _build into complete web HTML files in _site, using Jekyll to generate the links.  \
-And, it fires up a server that runs until stopped, that displays the HTML files in _site. \
+Run `$ make serve`
 
-In one browser window, go to `http://127.0.0.1:4000/JBook1`
+
+This command does a lot.
+It converts the HTML files in _build into complete web HTML files in _site, using Jekyll to generate the links.
+And, it fires up a server that runs until stopped, that displays the HTML files in _site.
+
+Open a browser window, go to `http://127.0.0.1:4000/JBook1`
+
 See how your book looks.  Check the links.
 
 
-If you make a change to a file in /content, open a new Terminal window in the JBook1 directory, and run `$ jupyter-book build .` \
-(or `$ make build` , which does the same thing)`.\
+If you make a change to a file in /content, open a new Terminal window in the JBook1 directory.
 
-Then, just reload the browser to see the result; the server is still running in the other window. \
+
+Run `$ jupyter-book build . `
+
+(or `$ make build` , which does the same thing).
+
+Then, just reload the browser to see the result; the server is still running in the other window.
 (On Mac, use `Command-Shift-R`; on PC, `Control-Shift-R`)
 
-Now, move all the files in _site up to the GitHub server, and make sure GitHub knows where to find them.
+Now, to move all the files in _site up to the GitHub server, and make sure GitHub knows where to find them.
 
-
-$ ghp-import -n -p -f _site
+Run `$ ghp-import -n -p -f _site`
 
 In another browser window, go to `https://yourname.github.io/JBook1`
 
@@ -78,13 +97,13 @@ See how it looks. Check the links.
 
 That's it.
 
-```
+
 
 ```
-Oh, and when you're used to using the CLI, here's what it looks like after you save your edits:
+Oh, when you're used to using the CLI, here's what it looks like after you save your edits and the server is running:
 
-$ !j
-$ !g
+$ !j  # Now you can see the updated book locally.
+$ !g  # Now you can see the updated book published on the web.
 
 ```
 

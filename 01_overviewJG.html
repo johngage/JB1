@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Overview</title>
-  <meta name="description" content="The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown. jupyter-book converts b...">
+  <meta name="description" content="The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown.jupyter-book converts bo...">
 
   <link rel="canonical" href="https://johngage.github.io/JB1/01_overviewJG.html">
   <link rel="alternate" type="application/rss+xml" title="JB1" href="https://johngage.github.io/JB1/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://johngage.github.io/JB1/01_overviewJG.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Overview" />
-<meta property="og:description" content="The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown. jupyter-book converts b..." />
+<meta property="og:description" content="The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown.jupyter-book converts bo..." />
 <meta property="og:image"       content="https://johngage.github.io/JB1/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://johngage.github.io/JB1/01_overviewJG.html",
   "headline": "Overview",
-  "datePublished": "2019-10-08T22:21:42-07:00",
-  "dateModified": "2019-10-08T22:21:42-07:00",
-  "description": "The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown. jupyter-book converts b...",
+  "datePublished": "2019-10-08T22:56:34-07:00",
+  "dateModified": "2019-10-08T22:56:34-07:00",
+  "description": "The Jupyter Book Guide: JG This is a guide to the creation of your own book from content written inJupyter Notebooks and in markdown.jupyter-book converts bo...",
   "author": {
     "@type": "Person",
     "name": "JohnGage"
@@ -689,17 +689,18 @@ function toggleDiv(divId) {
 </script>
 
 </head><h1 id="The-Jupyter-Book-Guide:-JG">The Jupyter Book Guide: JG<a class="anchor-link" href="#The-Jupyter-Book-Guide:-JG"> </a></h1><p>This is a guide to the creation of your own book from content written in
-Jupyter Notebooks and in markdown. <em><strong>jupyter-book</strong></em> converts book content in
+Jupyter Notebooks and in markdown.</p>
+<p><em><strong>jupyter-book</strong></em> converts book content in
 Jupyter Notebook and markdown format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.</p>
 <p>Using additional packages, your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....</p>
-<p><em><strong>jupyter-book</strong></em> is a python package that generates book pages in HTML with the <code>jupyter-book build</code> command, and then combines those HTML pages into a book with the <code>jupyter-book serve</code> command. This second step uses another package, <code>jekyll</code>, to build a table of contents column for the book, and a page contents column for each page. The <code>serve</code> command also starts a local server on your machine to show your book in your browser.</p>
-<p>By pointing your browser to the local address provided by running the <code>jupyter-book serve</code> command, you will see your book, served from your local machine.  That <code>serve</code> command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.</p>
-<p>Last, to publish your book to the web, you will use a package named <code>ghp-import</code>, which you will run in a separate terminal window because your initial terminal is still running <code>jupyter-book serve</code>.</p>
+<p><em><strong>jupyter-book</strong></em> is a python package that generates book pages in HTML with the <code>jupyter-book build</code> command, and then combines those HTML pages into a book with the <code>make serve</code> command. This second step uses another package, <code>jekyll</code>, to build a table of contents column for the book, and a page contents column for each page. The <code>make serve</code> command also starts a local server on your machine to show your book in your browser.</p>
+<p>By pointing your browser to the local address provided by running the <code>jupyter-book serve</code> command, you will see your book, served from your local machine.  That <code>make serve</code> command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.</p>
+<p>Last, to publish your book to the web, you will use a package named <code>ghp-import</code>, which you will run in a separate terminal window because your initial terminal is still running <code>make serve</code>.</p>
 <p>Run <code>$ pip install ghp-import</code> once to install the ghp_import package. Though it says "import", it exports your finished HTML pages to GitHub, so GitHub can serve them as a website to the Internet.</p>
 <p>Running <code>$ ghp-import -n -p -f _site</code> will push your final HTML files to Github to be published. We'll describe how this works, later, after we describe how to set up your GitHub repository.</p>
 <p>Your workflow, from this point on, will be:</p>
 <ul>
-<li>use your editor to change the local content in the /content directory, and save your Jupyter notebooks into your local /content directory</li>
+<li>use your editor to change the local content in the /content directory.  Save your Jupyter notebooks into your local /content directory</li>
 <li>save your changes</li>
 <li>build your book's HTML with <code>$ jupyter-book build .</code>,  which is executed in your book's directory</li>
 <li>look at your book in your browser, using the server running on your local machine with a local address.  See how it looks.</li>
@@ -712,45 +713,35 @@ Jupyter Notebook and markdown format to HTML, and then further modifies that HTM
 <pre><code>
 $ cd JupyterBooks/JBook1   #move into the home directory for your book
 $ atom .   #invoke the Atom editor on the directory, which will create a "project",\
- allowing the Atom editor to show all files in the directory
-
-Edit files in /content
-Save
-
-$ jupyter-book build .   #This converts the .md and .ipynb files in /content \
+ allowing the Atom editor to show all files in the directory</code></pre>
+<p>Edit files in /content</p>
+<p>Save</p>
+<p>Run <code>$ jupyter-book build .</code></p>
+<p>This converts the .md and .ipynb files in /content
 into HTML files in _build.  \
-These HTML files do not yet have the full page-to-page links needed for a web site. \
-Those links will be created by running `make serve`.
+These HTML files do not yet have the full page-to-page links needed for a web site.
+To create those links:</p>
+<p>Run <code>$ make serve</code></p>
+<p>This command does a lot.
+It converts the HTML files in _build into complete web HTML files in _site, using Jekyll to generate the links.
+And, it fires up a server that runs until stopped, that displays the HTML files in _site.</p>
+<p>Open a browser window, go to <code>http://127.0.0.1:4000/JBook1</code></p>
+<p>See how your book looks.  Check the links.</p>
+<p>If you make a change to a file in /content, open a new Terminal window in the JBook1 directory.</p>
+<p>Run <code>$ jupyter-book build .</code></p>
+<p>(or <code>$ make build</code> , which does the same thing).</p>
+<p>Then, just reload the browser to see the result; the server is still running in the other window.
+(On Mac, use <code>Command-Shift-R</code>; on PC, <code>Control-Shift-R</code>)</p>
+<p>Now, to move all the files in _site up to the GitHub server, and make sure GitHub knows where to find them.</p>
+<p>Run <code>$ ghp-import -n -p -f _site</code></p>
+<p>In another browser window, go to <code>https://yourname.github.io/JBook1</code></p>
+<p>See how it looks. Check the links.</p>
+<p>That's it.</p>
 
-$ make serve  #This command does a lot. \
-It converts the HTML files in _build into complete web HTML files in _site, using Jekyll to generate the links.  \
-And, it fires up a server that runs until stopped, that displays the HTML files in _site. \
+<pre><code>Oh, when you're used to using the CLI, here's what it looks like after you save your edits and the server is running:
 
-In one browser window, go to `http://127.0.0.1:4000/JBook1`
-See how your book looks.  Check the links.
-
-
-If you make a change to a file in /content, open a new Terminal window in the JBook1 directory, and run `$ jupyter-book build .` \
-(or `$ make build` , which does the same thing)`.\
-
-Then, just reload the browser to see the result; the server is still running in the other window. \
-(On Mac, use `Command-Shift-R`; on PC, `Control-Shift-R`)
-
-Now, move all the files in _site up to the GitHub server, and make sure GitHub knows where to find them.
-
-
-$ ghp-import -n -p -f _site
-
-In another browser window, go to `https://yourname.github.io/JBook1`
-
-See how it looks. Check the links.
-
-That's it.</code></pre>
-
-<pre><code>Oh, and when you're used to using the CLI, here's what it looks like after you save your edits:
-
-$ !j
-$ !g</code></pre>
+$ !j  # Now you can see the updated book locally.
+$ !g  # Now you can see the updated book published on the web.</code></pre>
 <h2 id="Installing-jupyter-book">Installing <em>jupyter-book</em><a class="anchor-link" href="#Installing-jupyter-book"> </a></h2><p>You will use a terminal interface: on a Mac, use Terminal or iTerm; on a PC, use .........  We will call it the "command-line interface", or CLI. We use '$' to indicate the beginning of the command line.</p>
 <p>The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your
 Jupyter Book. You can install it via <code>pip</code> with the following command that you can execute anywhere:</p>
