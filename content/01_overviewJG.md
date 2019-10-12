@@ -16,13 +16,13 @@ This is a guide to the creation of your own book from content written in
 Jupyter Notebooks and in markdown.
 
 _**jupyter-book**_ converts book content in
-Jupyter Notebook and markdown format to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.
+Jupyter Notebook format (.ipynb) and markdown format (.md) to HTML, and then further modifies that HTML (using Jekyll) into a book fit for hosting on the web, either at GitHub, or at any hosting service.
 
-Using additional packages, your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  And your mathematical notation is rendered, using .....
+Using additional packages ([Binder](https://mybinder.org), or JupyterHub, or Thebelab ), your book becomes live and interactive, running the Jupyter Notebook content either locally or across the web.  Your mathematical notation is rendered, using MathJax.
 
-_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command, and then combines those HTML pages into a book with the `make serve` command. This second step uses another package, `jekyll`, to build a table of contents column for the book, and a page contents column for each page. The `make serve` command also starts a local server on your machine to show your book in your browser.
+_**jupyter-book**_ is a python package that generates book pages in HTML with the `jupyter-book build` command.  Then, with the `make serve` command, another package, `Jekyll`, combines those HTML pages into a book.  This second step uses  `Jekyll` to build a table of contents column for the book, build a page contents column for each page, and start a local server on your machine to show your book in your browser, allowing you to edit your book interactively.
 
-By pointing your browser to the local address provided by running the `make serve` command, you will see your local book, served from your local machine.  That `make serve` command will continue to run, allowing you to dynamically update book content and see the result immediately in your browser.
+By pointing your browser to the local address provided by running the `make serve`bash command, you will see your local book, served from your local machine.  `Jekyll` will run continuously, allowing you to dynamically edit book content and see the result immediately in your browser.
 
 Last, to publish your book to the web, you will use a package named `ghp-import`, which you will run in a separate terminal window because your initial terminal is still running `make serve`.
 
